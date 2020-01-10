@@ -1,6 +1,6 @@
 Name: libfonts
 Version: 1.1.3
-Release: 11%{?dist}
+Release: 13%{?dist}
 Summary: TrueType Font Layouting
 License: LGPLv2 and UCD
 Group: System Environment/Libraries
@@ -9,7 +9,7 @@ Group: System Environment/Libraries
 #to simplify the licensing
 Source: %{name}-%{version}-jarsdeleted.zip
 URL: http://reporting.pentaho.org/
-BuildRequires: ant, ant-contrib, ant-nodeps, java-devel, jpackage-utils, libloader >= 1.1.3
+BuildRequires: ant, ant-contrib, java-devel, jpackage-utils, libloader >= 1.1.3
 Buildroot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 Requires: java, jpackage-utils, libloader >= 1.1.3
 BuildArch: noarch
@@ -72,6 +72,12 @@ rm -rf $RPM_BUILD_ROOT
 %{_javadocdir}/%{name}
 
 %changelog
+* Wed Jan 08 2014 Caolán McNamara <caolanm@redhat.com> - 1.1.3-13
+- Resolves: rhbz#1048871 fix FTBFS
+
+* Fri Dec 27 2013 Daniel Mach <dmach@redhat.com> - 1.1.3-12
+- Mass rebuild 2013-12-27
+
 * Tue Apr 02 2013 Caolán McNamara <caolanm@redhat.com> - 1.1.3-11
 - drop iText requirement, we don't need it, and it's a complete pain
 
